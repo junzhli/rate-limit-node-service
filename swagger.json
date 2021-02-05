@@ -1,0 +1,79 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Rate limit service (node)",
+    "termsOfService": "",
+    "contact": {
+      "email": "junzhli@gmail.com"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "rate",
+      "description": "Everything about rate limit"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/rate": {
+      "get": {
+        "tags": [
+          "rate"
+        ],
+        "summary": "rateLimiter serves status about request quota remaining",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Request quota remaining",
+            "schema": {
+              "$ref": "#/definitions/SuccessfulMessage"
+            }
+          },
+          "429": {
+            "description": "Requests limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/ErrorMessage"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ErrorMessage": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "default": "user visit limit exceeded"
+        }
+      }
+    },
+    "SuccessfulMessage": {
+      "type": "object",
+      "properties": {
+        "visits": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
