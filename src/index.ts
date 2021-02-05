@@ -3,6 +3,7 @@ import logger from "./libs/logger";
 
 const log = logger("app");
 
-app.listen(8080, () =>
-    log.info("Rate limit service listening on port 8080!")
+const port = process.env.PORT || 8080;
+app.listen(port, () =>
+    log.info(`Rate limit service listening on port ${port}!`)
 );
