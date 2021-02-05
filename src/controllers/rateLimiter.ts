@@ -17,7 +17,6 @@ const rateLimiter = async (req: express.Request,
                      next: express.NextFunction) => {
     try {
         const ip = getClientIp(req);
-        console.log(ip);
         if (!ip) {
             throw new Error("ip is undefined");
         }
