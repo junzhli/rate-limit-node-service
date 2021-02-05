@@ -1,7 +1,6 @@
-Rate limit service   
+Rate limit service written in Node.js    
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-Rate limit service written in Node.js  
-[Public endpoint](https://rate-limit-node-service.herokuapp.com/api-docs)
+[Public endpoint](https://rate-limit-node-service.herokuapp.com)
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -46,7 +45,6 @@ Available APIs
 -----
 
 [See swagger page for details](https://rate-limit-node-service.herokuapp.com/api-docs)
-
 
 Author
 -----
