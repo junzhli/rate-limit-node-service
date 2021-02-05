@@ -33,13 +33,13 @@ Run
 * For development
 
 ```bash
-$ yarn start
+$ yarn run dev
 ```
 
 * For production
 
 ```bash
-$ yarn run prod
+$ yarn start
 ```
 
 Available APIs

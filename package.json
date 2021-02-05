@@ -6,8 +6,8 @@
   "author": "Jeremy Li",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./src/index.ts",
-    "prod": "NODE_ENV=production ts-node ./src/index.ts",
+    "dev": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./src/index.ts",
+    "start": "NODE_ENV=production ts-node ./src/index.ts",
     "test": "jest",
     "lint-fix": "tslint --fix --project ."
   },
