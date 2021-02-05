@@ -1,9 +1,9 @@
 import express from "express";
-import loggerHandler from "./middlewares/loggerHandler";
-import {rateLimiter} from "./controllers/rateLimiter";
-import {errorHandler} from "./middlewares/errorHandlers";
 import swaggerUi from "swagger-ui-express";
 import swaggerDoc from "../swagger.json";
+import {rateLimiter} from "./controllers/rateLimiter";
+import {errorHandler} from "./middlewares/errorHandlers";
+import loggerHandler from "./middlewares/loggerHandler";
 
 const app = express();
 

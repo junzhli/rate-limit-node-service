@@ -1,8 +1,8 @@
+import httpStatusCode from "http-status-codes";
 import supertest from "supertest";
 import app from "../src/app";
-import redis from "../src/libs/redis";
-import httpStatusCode from 'http-status-codes';
 import {REQUESTS_LIMIT_PER_IP} from "../src/libs/rateLimiter";
+import redis from "../src/libs/redis";
 
 const HEADER_CONTENT_TYPE = "application/json; charset=utf-8";
 
@@ -31,7 +31,6 @@ describe("integration testings", () => {
     });
     
     describe("Rate limiter api", () => {
-        let testSession: supertest.SuperTest<supertest.Test>;
         let visits = 0;
     
         beforeAll(() => {

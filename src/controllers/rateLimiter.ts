@@ -1,11 +1,11 @@
-import express from "express";
-import redis from "../libs/redis";
 import {getClientIp} from "@supercharge/request-ip";
-import {getIPVisits, REQUESTS_LIMIT_PER_IP} from "../libs/rateLimiter";
-import {RateLimiterResponseBody} from "./types/rateLimiter";
+import express from "express";
+import httpStatusCode from "http-status-codes";
 import logger from "../libs/logger";
+import {getIPVisits, REQUESTS_LIMIT_PER_IP} from "../libs/rateLimiter";
+import redis from "../libs/redis";
 import {ErrorMessageResponseBody} from "./types";
-import httpStatusCode from "http-status-codes"
+import {IRateLimiterResponseBody} from "./types/rateLimiter";
 
 const log = logger("rate-limiter-controller");
 
@@ -39,12 +39,12 @@ const rateLimiter = async (req: express.Request,
 
         res.status(httpStatusCode.OK).json({
             visits
-        } as RateLimiterResponseBody);
+        } as IRateLimiterResponseBody);
     } catch (error) {
         next(error);
     }
-}
+};
 
 export {
     rateLimiter
-}
+};

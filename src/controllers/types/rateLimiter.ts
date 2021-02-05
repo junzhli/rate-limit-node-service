@@ -1,3 +1,3 @@
-export interface RateLimiterResponseBody {
-    visits: number
+export interface IRateLimiterResponseBody {
+    visits: number;
 }

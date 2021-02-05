@@ -1,3 +1,3 @@
-export interface ErrorMessageResponseBody {
-    error: string
+export interface IErrorMessageResponseBody {
+    error: string;
 }

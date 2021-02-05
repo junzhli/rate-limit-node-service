@@ -1,8 +1,8 @@
 import redis, {RedisClient} from "redis";
+import {promisify} from "util";
 import { RedisConfig } from "./config";
 import logger from "./logger";
 import { IRedis, IRedisConfigOptions } from "./types/redis";
-import {promisify} from "util";
 
 const log = logger("redis");
 
