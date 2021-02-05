@@ -7,6 +7,7 @@ Rate limit service written in Node.js
 - [Prerequisite](#prerequisite)
 - [Building and test](#building-and-test)
 - [Run](#run)
+- [Test](#test)
 - [Available APIs](#available-apis)
 - [Author](#author)
 - [License](#license)
@@ -39,6 +40,13 @@ $ yarn run dev
 
 ```bash
 $ yarn start
+```
+
+Test
+-----
+
+```bash
+$ yarn test
 ```
 
 Available APIs
