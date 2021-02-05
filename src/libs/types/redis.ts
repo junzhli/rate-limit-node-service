@@ -3,6 +3,7 @@ import { RedisClient } from "redis";
 export interface IRedisConfigOptions {
     host?: string;
     port?: number;
+    url?: string;
 }
 
 export interface IRedis {

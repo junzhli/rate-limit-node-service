@@ -15,9 +15,10 @@ class Redis implements IRedis {
 
     constructor({ 
         host = "127.0.0.1",
-        port = 6379
+        port = 6379,
+        url = "",
      }: IRedisConfigOptions) {
-        this.client = redis.createClient({ host, port });
+        this.client = (url) ? redis.createClient(url) : redis.createClient({ host, port });
         
         this.client.on("connect", () => {
             log.info("Redis connected");
