@@ -32,10 +32,6 @@ describe("integration testings", () => {
     
     describe("Rate limiter api", () => {
         let visits = 0;
-    
-        beforeAll(() => {
-            testSession = supertest.agent(app);
-        });
 
         test("it should be ok to respond successful state with quota used", async () => {
             for (let i = 0; i < REQUESTS_LIMIT_PER_IP; i++) {

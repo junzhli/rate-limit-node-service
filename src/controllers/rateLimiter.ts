@@ -4,7 +4,7 @@ import httpStatusCode from "http-status-codes";
 import logger from "../libs/logger";
 import {getIPVisits, REQUESTS_LIMIT_PER_IP} from "../libs/rateLimiter";
 import redis from "../libs/redis";
-import {ErrorMessageResponseBody} from "./types";
+import {IErrorMessageResponseBody} from "./types";
 import {IRateLimiterResponseBody} from "./types/rateLimiter";
 
 const log = logger("rate-limiter-controller");
@@ -33,7 +33,7 @@ const rateLimiter = async (req: express.Request,
         if (visits > REQUESTS_LIMIT_PER_IP) {
             res.status(httpStatusCode.TOO_MANY_REQUESTS).json({
                 error: "user visit limit exceeded"
-            } as ErrorMessageResponseBody);
+            } as IErrorMessageResponseBody);
             return;
         }
 
